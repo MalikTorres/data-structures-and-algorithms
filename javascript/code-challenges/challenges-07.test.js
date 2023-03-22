@@ -53,6 +53,10 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
+
+let newArr = arr.join(' ');
+
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,6 +75,7 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  
   return result;
 };
 
