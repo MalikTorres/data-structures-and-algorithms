@@ -75,7 +75,9 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
-  str.split('');
+  for (let i = 0; i <= str.length; i++) {
+    result.push(str.slice(i));
+  }
   return result;
 };
 
@@ -89,6 +91,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+
 };
 
 
@@ -131,11 +134,30 @@ const gruffaloCrumble = {
     'Bake for 12-15 hours',
   ]
 };
+/*
+'1 medium-sized Gruffalo',
+    '8 pounds oats',
+    '2 pounds brown sugar',
+    '4 pounds flour',
+    '2 gallons pure maple syrup',
+    '16 cups chopped nuts',
+    '1 pound baking soda',
+    '1 pound baking powder',
+    '1 pound cinnamon',
+    '6 gallons melted butter',
+    '2 gallons fresh water',
 
+
+*/
 
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(ingredient => {
+    let withoutAmount = ingredient.slice(ingredient.indexOf(' ') + 1);
+    let withoutUnits = withoutAmount.slice(withoutAmount.indexOf(' ') + 1);
+    result.pish(withoutUnits);
+  })
   return result;
 };
 
