@@ -156,8 +156,8 @@ const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
   recipe.ingredients.forEach(ingredient => {
-    let withoutAmount = ingredient.slice(ingredient.indexOf(' ') + 1);
-    let withoutUnits = withoutAmount.slice(withoutAmount.indexOf(' ') + 1);
+    let withoutAmounts = ingredient.slice(ingredient.indexOf(' ') + 1);
+    let withoutUnits = withoutAmounts.slice(withoutAmounts.indexOf(' ') + 1);
     result.push(withoutUnits);
   });
   return result;
