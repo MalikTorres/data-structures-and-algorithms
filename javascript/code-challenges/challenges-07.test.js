@@ -91,7 +91,9 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  let newArray = [...arr];
 
+  return newArray;
 };
 
 
@@ -156,8 +158,8 @@ const listFoods = (recipe) => {
   recipe.ingredients.forEach(ingredient => {
     let withoutAmount = ingredient.slice(ingredient.indexOf(' ') + 1);
     let withoutUnits = withoutAmount.slice(withoutAmount.indexOf(' ') + 1);
-    result.pish(withoutUnits);
-  })
+    result.push(withoutUnits);
+  });
   return result;
 };
 
