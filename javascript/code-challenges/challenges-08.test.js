@@ -55,9 +55,12 @@ let characters = [
 const sortByChildren = (charArray) => {
   // Solution code here...
 
-  let result = characters.sort((a, b) => (b.children < a.children) ? 1 : (b.children > a.children) ? -1 : 0);
+  // let result = characters.sort((a, b) => (b.children < a.children) ? 1 : (b.children > a.children) ? -1 : 0);
   // need to figure out how to compare name
-  return result;
+
+  // sorting in place
+  return charArray.sort(())
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,9 +118,11 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let capital = /[^A-Z]/g;
+  let capital = /[A-Z][a-z]*/g;
 
-  return capital;
+  let capitals = str.match(capital);
+
+  return capitals || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -128,6 +133,16 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let newArr = [];
+  let regex = /^[A-J]/;
+
+  arr.forEach(city => {
+    if(regex.test(city)) {
+      newArr.push(city);
+    }
+  });
+
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
