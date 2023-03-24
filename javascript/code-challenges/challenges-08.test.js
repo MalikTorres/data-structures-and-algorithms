@@ -55,11 +55,17 @@ let characters = [
 const sortByChildren = (charArray) => {
   // Solution code here...
 
-  // let result = characters.sort((a, b) => (b.children < a.children) ? 1 : (b.children > a.children) ? -1 : 0);
-  // need to figure out how to compare name
+  return charArray.sort((a, b) => {
+    if (a.children.length < b.children.length) {
+      return -1;
+    } else if (a.children.length > b.children.length) {
+      return 1;
+    } else {
+      return a.house > b.house ? 1 : -1;
+    }
 
-  // sorting in place
-  return charArray.sort(())
+  });
+
 
 };
 
@@ -137,7 +143,7 @@ const citiesAtoJ = (arr) => {
   let regex = /^[A-J]/;
 
   arr.forEach(city => {
-    if(regex.test(city)) {
+    if (regex.test(city)) {
       newArr.push(city);
     }
   });
