@@ -18,7 +18,7 @@ Becomes:
 ]
 ------------------------------------------------------------------------------------------------ */
 
-function transformToLis(obj){
+function transformToLis(obj) {
   // Solution code here...
   return Object.entries(obj).map(([key, value]) => `<li>${key}: ${value}</li>`);
 
@@ -36,6 +36,10 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+  return input.reduce((count, arr) => {
+    return count + arr.filter(num => num === target).length;
+  }, 0);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,6 +136,13 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  const names = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].gender === 'male' || data[i].gender === 'female') {
+      names.push(data[i].name);
+    }
+  }
+  return names.join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -157,8 +168,8 @@ Run your tests from the console: jest challenges-10.test.js
 
 describe('Testing challenge 1', () => {
   test('It should return a list of key value pairs inside of li tags', () => {
-    expect(transformToLis({name: 'bob', age: 32})[0]).toStrictEqual(`<li>name: bob</li>`);
-    expect(transformToLis({name: 'bob', age: 32})[1]).toStrictEqual(`<li>age: 32</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[0]).toStrictEqual(`<li>name: bob</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[1]).toStrictEqual(`<li>age: 32</li>`);
     expect(transformToLis({})).toStrictEqual([]);
   });
 });
