@@ -136,13 +136,7 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
-  const names = [];
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].gender === 'male' || data[i].gender === 'female') {
-      names.push(data[i].name);
-    }
-  }
-  return names.join(' and ');
+
 };
 
 /* ------------------------------------------------------------------------------------------------
