@@ -12,7 +12,15 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
-}
+  const pattern = /^(Mr\.|Mrs\.|Ms\.|Dr\.)\s[a-zA-Z\s]*$/;
+  const nameList = [];
+  arr.forEach(name => {
+    if (pattern.test(name)) {
+      nameList.push(name);
+    }
+  });
+  return nameList;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -25,13 +33,10 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 const toTitleCase = (arr) => {
   // Solution code here...
 
-  let newArray = arr.map((word) => {
-
-    word[0].toUpperCase(); + word.substring(1);
-
-    return newArray;
+  const newArray = arr.map((word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
   });
-
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -107,6 +112,10 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+  const lukeMass = arr.find((character) => character.name === "Luke Skywalker").mass;
+  const biggerCharacters = arr.filter((character) => parseInt(character.mass) > parseInt(lukeMass));
+  const names = biggerCharacters.map((character) => character.name);
+  return names.join(" - ");
 };
 
 /* ------------------------------------------------------------------------------------------------
