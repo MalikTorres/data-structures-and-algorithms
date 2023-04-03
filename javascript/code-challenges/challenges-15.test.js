@@ -1,5 +1,7 @@
 'use strict';
 
+const { data } = require("cheerio/lib/api/attributes");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -12,14 +14,9 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
-  const pattern = /^(Mr\.|Mrs\.|Ms\.|Dr\.)\s[a-zA-Z\s]*$/;
-  const nameList = [];
-  arr.forEach(name => {
-    if (pattern.test(name)) {
-      nameList.push(name);
-    }
-  });
-  return nameList;
+  let regex = /^(Mr\.|Mrs\.|Ms\.|Dr\.)\s[a-zA-Z]+$/;
+
+  return arr.filter(str => regex.test(str));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,10 +109,9 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
-  const lukeMass = arr.find((character) => character.name === "Luke Skywalker").mass;
-  const biggerCharacters = arr.filter((character) => parseInt(character.mass) > parseInt(lukeMass));
-  const names = biggerCharacters.map((character) => character.name);
-  return names.join(" - ");
+  return data.filter(personObj => personObj.gender.includes('male'))
+    .map(person => person.name)
+    .join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -134,6 +130,8 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+
+  return arr.sort((a, b) => a[property] > b[property] ? 1 : -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -150,6 +148,10 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+
+  let regTest = /(^https:\/\/)/;
+
+  return regTest.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -173,6 +175,11 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+
+  const helpCheck = (row1,col1,row2,col2,row3,col3) => {
+    return board[row1][col1] !== '' &&
+    board[row1]
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
