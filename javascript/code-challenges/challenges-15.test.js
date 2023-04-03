@@ -151,6 +151,7 @@ const isSecure = (url) => {
 
   let regTest = /(^https:\/\/)/;
 
+
   return regTest.test(url);
 };
 
@@ -176,9 +177,9 @@ Here is a sample board:
 const detectTicTacToeWin = (board) => {
   // Solution code here...
 
-  const helpCheck = (row1,col1,row2,col2,row3,col3) => {
+  const helpCheck = (row1, col1, row2, col2, row3, col3) => {
     return board[row1][col1] !== '' &&
-    board[row1]
+      board[row1]
   }
 };
 
