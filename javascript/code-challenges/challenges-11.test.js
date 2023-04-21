@@ -20,11 +20,7 @@ Becomes:
 
 function transformToLis(obj) {
   // Solution code here...
-  const arr = [];
-  for (const [key, value] of Object.entries(obj)) {
-    arr.push(`<li>${key}: ${value}</li>`);
-  }
-  return arr;
+ 
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,15 +35,7 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
-  return input.reduce((acc, curr) => {
-    return acc + curr.reduce((innerAcc, innerCurr) => {
-      if (innerCurr === target) {
-        return innerAcc + 1;
-      } else {
-        return innerAcc;
-      }
-    }, 0);
-  }, 0);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,11 +50,7 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
-  return input.reduce((acc, curr) => {
-    return acc + curr.reduce((acc2, curr2) => {
-      return acc2 + curr2;
-    }, 0);
-  }, 0);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,13 +67,7 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
-  return input.map((arr) => {
-    return arr.filter((num) => {
-      return typeof num === 'number' && num % 5 === 0;
-    }).map((num) => {
-      return Math.pow(2, num);
-    });
-  });
+  ;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -156,9 +134,7 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
-  return data.filter(personObj => personObj.gender.includes('male'))
-    .map(person => person.name)
-    .join(' and ');
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -171,7 +147,7 @@ let findShortest = (data) => {
   // Solution code here...
 
 
-  return data.reduce((shortestSoFar,nextCharacter) => +shortestSoFar.height < +nextCharacter.height ? shortestSoFar : nextCharacter).name;
+
 };
 
 /* ------------------------------------------------------------------------------------------------

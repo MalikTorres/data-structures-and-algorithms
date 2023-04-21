@@ -30,10 +30,6 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 const toTitleCase = (arr) => {
   // Solution code here...
 
-  const newArray = arr.map((word) => {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  });
-  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,9 +105,7 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
-  return data.filter(personObj => personObj.gender.includes('male'))
-    .map(person => person.name)
-    .join(' - ');
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -131,7 +125,6 @@ This data could be sorted by name or price.
 const sortBy = (property, arr) => {
   // Solution code here...
 
-  return arr.sort((a, b) => a[property] > b[property] ? 1 : -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -177,10 +170,6 @@ Here is a sample board:
 const detectTicTacToeWin = (board) => {
   // Solution code here...
 
-  const helpCheck = (row1, col1, row2, col2, row3, col3) => {
-    return board[row1][col1] !== '' &&
-      board[row1]
-  }
 };
 
 /* ------------------------------------------------------------------------------------------------

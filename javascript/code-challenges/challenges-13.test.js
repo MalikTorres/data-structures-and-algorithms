@@ -9,14 +9,7 @@ Write a function named longestString that takes in an array of strings and retur
 const longestString = (arr) => {
   // Solution code here...
 
-  let longestStr = '';
 
-  arr.forEach((str)=> {
-    if(str.length > longestStr.length) {
-      longestStr = str;
-    }
-  });
-  return arr.indexOf(longestStr);
 
 };
 
@@ -30,12 +23,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
-  let newArray = arr.map((words)=> {
 
-    return words.charAt(0);
-
-  });
-  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,7 +36,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
-  return arr.filter(str => str.includes(':)'));
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,7 +50,7 @@ For example, (123) 456-7890 returns 1234567890
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
 
-  return arr.map(number => `${number.substring(1,4)}${number.substring(6,9)}${number.substring(10)}`);
+
 
 
 };
@@ -78,7 +66,7 @@ For example, 'abcdefg' returns 'bdf'
 const onlyOddChars = (str) => {
   // Solution code here...
 
-  return str.split('').filter((element,index) => index % 2 === 1).join('');
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,7 +78,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 const allHappy = (arr) => {
   // Solution code here...
 
-  return arr.every(str => str.includes(':)'));
+
 };
 
 /* ------------------------------------------------------------------------------------------------
