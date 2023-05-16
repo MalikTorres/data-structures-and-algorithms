@@ -3,7 +3,7 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named transformToLis that, given an object, returns an array of the key value pairs as html list items.
+Write a function named transformToLis that, given an , returns an array of the key value pairs as html list items.
 
 For example:
 {
@@ -20,7 +20,19 @@ Becomes:
 
 function transformToLis(obj) {
   // Solution code here...
- 
+  // need  method likely  entries method
+  // restructure  as html list items
+  // Object.entries(obj) -> [[name,bob], [age,32]]
+  // iterate through return from object.entries - pull out those elements in each array - map
+  // .join -> array method, join all the elements in an array and return a string based on what it to join on
+  // fasion them into a html list item => <li>name: bob</li>
+
+  //*** this should return ['<li><li>'] */
+  return Object.entries(obj).map(keyValuePair => `<li>${keyValuePair.join(': ')}</li>`);
+
+
+
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,11 +43,35 @@ Write a function named count that, given an integer and an array of arrays, uses
 Note: You might need to use the same method more than once.
 
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
+
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
   // Solution code here...
+  // we need to iterate through an array of an array
+  // can use flat to convert a single array
+  //** AUDREY NOTES*/
 
+  // use flat() to remove the nested array situation
+  // once i have one array of numbers -> to start iterating through the array
+  // compare my target to each number in the array - does the target = the number in that iteration
+  // counter that if the numbers match, increment my counter,,
+  // filter is going to return me an array of elements that pass a test.. return filtered array length
+  let newArray = input.flat();
+
+  let numCount = 0;
+
+  for (let i = 0; i < newArray.length; i++) {
+    if (newArray[i] === target)
+      numCount++;
+  }
+  return numCount;
+
+  //* AUDREY METHOD */
+
+  // let matchArray = input.flat().filter(number => number === target);
+
+  // return matchArray.length
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,7 +86,17 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  // use flat.() to convert the array into a single array
+  // potentially use map and a counter variable
 
+  let sum = 0;
+
+  input.flat().map(item => sum += item);
+
+  return sum;
+
+  // ADUREY METHOD
+  // return input.flat().reduce((runningTotal, currentValue) => runningTotal + currentValue);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +113,23 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
-  ;
+  // map method for each index in the array of arrays
+
+  let newArray = input.map(nested => nested.filter(number => number % 5 === 0 && typeof number === 'number').map(nums => Math.pow(2, nums)));
+  console.log(newArray);
+  return newArray;
+
+  //** Audrey Method */
+  // nested loop
+  // outer loop going to iterate trhough outer array and look at every nested array
+  // inner loop:
+  // 1st - remove elements that are not numbers and not divisible by five - filter to return an array of numbers and numbers that are divisible by 5
+  // filtered numbers .. map for every filteredNum Math.pow(base, exponent) -> Math.pow(2, filteredNum)
+
+  // return input.map(nestedArr => {
+  //   return nestedArr.filter(number => number % 5 === 0 && typeof number === 'number').map(filteredNum => Math.pow(2, filteredNum));
+  // });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -131,9 +193,20 @@ let starWarsData = [{
   birth_year: '19BBY',
   gender: 'female'
 }];
+// output: -> 'Luke Skywalker and Darth Vader and Leia Organa'
+// an array of objects
+// iterate through that array of objects and I need to find only the objects where the gender matches male or female... filter -> return an array of object that pass the test
+// once I have those specific objects then I am going to pull the values from the name property -> map through that array of objects and only return person.name -> ['Leia Organa', 'Luke Skywalker', 'Darth Vader]
+// .join array -> string
+// and return a string of all those values separated by an ' and '
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+
+  return data.filter(personObj => personObj.gender.includes('male'))
+    .map(person => person.name)
+    .join(' and ');
+
 
 };
 
@@ -145,7 +218,13 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
+  // iterate through that array of objects
+  // look at the height of each personObj
+  // compare it to that person's height
+  // if that next person is taller or shorter ... keep track of the shortest
+  // end of my reduce --- return name of accunulator from reduce
 
+  return data.reduce((shortestSoFar, nextCharacter) => +shortestSoFar.height < +nextCharacter.height ? shortestSoFar : nextCharacter).name;
 
 
 };

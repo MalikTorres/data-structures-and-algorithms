@@ -93,6 +93,8 @@ const wordsToCharList = (arr) => {
   // Solution code here...
   let newArray = [...arr];
 
+  // arr.split('').map(char => char);
+
   return newArray;
 };
 
