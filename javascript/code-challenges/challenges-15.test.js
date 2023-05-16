@@ -29,6 +29,21 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
+  // Will need to iterate through the array
+  // Then potentially use charAt method to target the first letter
+  // Then toUppercase chained on
+
+
+
+  // let newTest = arr.toString();
+  // let nextTest = newTest.split(' ');
+
+  // let final = nextTest.map((words) => {
+  //   return words[0].toUpperCase() + words.substring(1);
+  // });
+  // return final;
+
+  return arr.map(str => str.charAt(0).toUpperCase() + str.substring(1));
 
 };
 
@@ -105,7 +120,11 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+  let luke = arr.find(character => character.name === 'Luke Skywalker');
 
+  return arr.filter(personObj => +personObj.mass > +luke.mass)
+    .map(person => person.name)
+    .join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,6 +143,8 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+
+  return arr.sort((a, b) => a[property] > b[property] ? 1 : -1);
 
 };
 
@@ -169,6 +190,29 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  for (let i = 0; i < 3; i++) {
+    if (board[i][0] === board[i][1] && board[i][0] === board[i][2] && board[i][0] !== '') {
+      return true;
+    }
+  }
+
+  // Check columns
+  for (let j = 0; j < 3; j++) {
+    if (board[0][j] === board[1][j] && board[0][j] === board[2][j] && board[0][j] !== '') {
+      return true;
+    }
+  }
+
+  // Check diagonals
+  if (board[0][0] === board[1][1] && board[0][0] === board[2][2] && board[0][0] !== '') {
+    return true;
+  }
+
+  if (board[0][2] === board[1][1] && board[0][2] === board[2][0] && board[0][2] !== '') {
+    return true;
+  }
+
+  return false;
 
 };
 

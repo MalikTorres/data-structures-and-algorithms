@@ -5,12 +5,23 @@ CHALLENGE 1 - Review
 
 Write a function named longestString that takes in an array of strings and returns the index position of the longest string.
 ------------------------------------------------------------------------------------------------ */
+// input is an array
+// I need to look at every element in that array and determine it's length -> loop of some sort
+// I might need a variable to store the longest string at that moment in time
+// I need to return the index of the longest string... array.method -> indexOf
 
+// ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki']
 const longestString = (arr) => {
   // Solution code here...
+  let longestStr = '';
 
+  arr.forEach(str => {
+    if (str.length > longestStr.length) {
+      longestStr = str;
+    }
+  });
 
-
+  return arr.indexOf(longestStr);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,6 +34,20 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
+  // iterate through the array
+  // we can map through each character
+  // use CharAt method to store each first character
+  // OR I can map through each character and return them at the 0 index
+
+  let newArray = arr.map((characters) => {
+    return characters[0];
+  });
+
+  return newArray;
+
+
+
+
 
 };
 
@@ -36,6 +61,13 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+  // iterate through the array
+  // then maybe use filter to isolate each character
+  // then includes to check for ':)'
+
+  return arr.filter(character => character.includes(':)'));
+
+
 
 };
 
@@ -49,6 +81,14 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  // map through characters
+  // replace non numeric strings
+  // replace whitespace
+  // regex for whitespace /\s/g
+
+  let newArray = arr.map(character => character.replaceAll('(', '').replaceAll('-', '').replaceAll(')', '').replace(/\s/g, ''));
+
+  return newArray;
 
 
 
@@ -65,7 +105,15 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  // iterate through the string
+  let newArray = [];
 
+  for (let i = 0; i < str.length; i++) {
+    if (i % 2 === 1) {
+      newArray.push(str[i]);
+    }
+  }
+  return newArray.join('').toString();
 
 };
 
@@ -77,6 +125,11 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  // .every on the array
+  // test for the every method str.includes(':))
+
+  return arr.every(str => str.includes(':)'));
+
 
 
 };
