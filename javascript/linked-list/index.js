@@ -44,6 +44,19 @@ class LinkedList {
       current = current.next;
     }
   }
+  // inlcudes method
+  includes(value) {
+    let current = this.head;
+    while(current) {
+      if (current === value){
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
+
   // IN PROGRESS toString method
   toString() {
     let current = this.head
