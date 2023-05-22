@@ -88,3 +88,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 
 [Array Reverse](../javascript/array-reverse)
 [Insert Array](../javascript/array-insert-shift)
+[Linked List Insertion](../javascript/linked-list-insertions)
