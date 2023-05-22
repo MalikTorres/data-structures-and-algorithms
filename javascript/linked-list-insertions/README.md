@@ -2,7 +2,7 @@
 linked-list-insertions
 
 ## Whiteboard Process
-![Linked List Insertions](../assets/)
+![Linked List Insertions](../assets/linked-list-insertion.png)
 
 ## Approach & Efficiency
 Time: O(n): constant time
