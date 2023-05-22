@@ -59,7 +59,7 @@ class LinkedList {
 
   // IN PROGRESS toString method
   toString() {
-    let current = this.head
+    let current = this.head;
     let answer = ' ';
     while (current.next !== null) {
       answer += ", ";
