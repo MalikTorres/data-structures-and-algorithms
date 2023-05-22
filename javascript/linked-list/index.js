@@ -47,24 +47,39 @@ class LinkedList {
   // inlcudes method
   includes(value) {
     let current = this.head;
-    while(current) {
-      if (current === value){
-        return true;
-      } else {
-        return false;
-      }
+    while (current) {
+      // shorthand one liner
+      if (current.value === value) return true;
+      // another way - maybe the way you are used to seeing
+      // if(current.value === valuse){
+      // return true
+      // };
+      current = current.next;
     }
+    return false;
   }
 
   // IN PROGRESS toString method
   toString() {
+    let result = '';
     let current = this.head;
-    let answer = ' ';
-    while (current.next !== null) {
-      answer += ", ";
+    while (current) {
+      // result variable is now adding and reassigning the current value
+      result += `{${current.value}} -> `;
+      // current is now moving through the next value until it is null with current.next
+      current = current.next;
     }
-    return answer;
+    return result;
   }
+
 }
+
+let list = new LinkedList();
+list.append('a');
+list.append('b');
+list.append('c');
+list.append('d');
+
+console.log(JSON.stringify(list));
 
 module.exports = LinkedList;

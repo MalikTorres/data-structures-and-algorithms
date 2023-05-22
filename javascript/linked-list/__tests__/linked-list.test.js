@@ -29,4 +29,21 @@ describe('Link List', () => {
     list.append('a');
     expect(list.head.next.next.value).toEqual('a');
   });
+
+  test('returns true if included, false if not', () => {
+    const list = new LinkedList();
+    list.insert(2);
+    list.insert(1);
+    expect(list.includes(1)).toBeTruthy();
+    expect(list.includes('apple')).toBeFalsey();
+  });
+
+  test('can be rendered as an expected string', () => {
+    const list = new LinkedList();
+    list.insert('c');
+    list.insert('b');
+    list.insert('a');
+  });
+  // '{ a } -> { b } -> { c } -> NULL'
+  expect(.list.toString()).toEqual('{ a } -> { b } -> { c } -> NULL');
 });
