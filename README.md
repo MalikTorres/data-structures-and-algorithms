@@ -25,3 +25,7 @@ To run your tests
 [Array Reverse](../data-structures-and-algorithms/javascript/array-reverse)
 
 [Insert Array](../data-structures-and-algorithms/javascript/array-insert-shift)
+
+[Array Binary Search](../data-structures-and-algorithms/javascript/array-binary-search)
+
+[Array Sum](../data-structures-and-algorithms/javascript/array-sum)
