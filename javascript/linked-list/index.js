@@ -56,7 +56,6 @@ class LinkedList {
     }
   }
 
-
   // IN PROGRESS toString method
   toString() {
     let current = this.head;
