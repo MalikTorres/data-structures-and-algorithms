@@ -25,13 +25,13 @@ class LinkedList {
   append(value) {
     let node = new Node(value);
     // if the head is null, we need to assign this new node to the head as well
-    if(!this.head) {
+    if (!this.head) {
       // in other words, if the list was empty do this and done
       this.head = node;
       return;
     }
     let current = this.head;
-    while(current.next){
+    while (current.next) {
       current = current.next;
     }
     current.next = node;
@@ -39,16 +39,20 @@ class LinkedList {
   // iteratively travers linked list and do a thing
   traversal() {
     let current = this.head;
-    while(current) {
+    while (current) {
       console.log(current.value);
       current = current.next;
     }
   }
-// IN PROGRESS toString method
-  toString(value) {
-    let result = this.head
-    next = result
+  // IN PROGRESS toString method
+  toString() {
+    let current = this.head
+    let answer = ' ';
+    while (current.next !== null) {
+      answer += ", ";
+    }
+    return answer;
   }
 }
 
-module.exports = LinkedList
+module.exports = LinkedList;
