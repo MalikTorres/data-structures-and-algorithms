@@ -71,6 +71,30 @@ class LinkedList {
     }
     return result;
   }
+  insertBefore(value, newValue) {
+    let node = new Node(value);
+    let current = this.head;
+    while (current.next !== null) {
+      if (current.next === value) {
+        current.next = newValue;
+      }
+    }
+    current.next = node;
+
+  }
+
+  findTheKthNode(k) {
+    let current = this.head;
+    for (let i = 0; current !== null && i < k; i++) {
+      if (current === null && i !== k - 1) {
+        return null;
+      }
+      while(current !== null) {
+        current = current.next;
+      }
+      return current;
+    }
+  }
 
 }
 
