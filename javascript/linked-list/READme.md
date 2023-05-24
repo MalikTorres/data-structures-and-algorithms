@@ -3,13 +3,17 @@
 Linked List Insertions
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![Linked List kth](../assets/linked-list-kth.png.png)
+![Linked List kth](../assets/linked-list-kth.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
+The big O for the challenges is O(n).
+
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
+
+**This code is in reference to the kth**
 ```
   findTheKthNode(k) {
     let current = this.head;
@@ -23,3 +27,5 @@ Linked List Insertions
       return current;
     }
   }
+
+
