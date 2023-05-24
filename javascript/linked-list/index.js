@@ -89,10 +89,32 @@ class LinkedList {
       if (current === null && i !== k - 1) {
         return null;
       }
-      while(current !== null) {
+      while (current !== null) {
         current = current.next;
       }
       return current;
+    }
+  }
+
+  linkedListZip(listOne, listTwo) {
+
+    let secondPointer = new Node(0);
+    let current = secondPointer;
+
+    while(listOne && listTwo) {
+      current.next = listOne;
+      current = current.next;
+
+      current.next = listTwo;
+      listTwo = listTwo.next;
+    }
+
+    if(listOne) {
+      current.next = listTwo;
+    }
+
+    if(listTwo) {
+      current.next = listTwo;
     }
   }
 
