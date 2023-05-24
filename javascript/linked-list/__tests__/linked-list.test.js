@@ -43,6 +43,10 @@ describe('Link List', () => {
     list.insert('c');
     list.insert('b');
     list.insert('a');
+
+    test('returns zip linked list with alternating nodes', () => {
+
+    })
   });
   // '{ a } -> { b } -> { c } -> NULL'
   //expect(list.toString()).toEqual('{ a } -> { b } -> { c } -> NULL');
