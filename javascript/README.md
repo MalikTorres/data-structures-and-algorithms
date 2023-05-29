@@ -90,4 +90,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 [Insert Array](../javascript/array-insert-shift)
 [Linked List Insertion](../javascript/linked-list-insertions)
 [Linked List Kth](../javascript/linked-list/READme.md)
-
+[Stack and Queues](../javascript/stack-and-queue/README.md)
