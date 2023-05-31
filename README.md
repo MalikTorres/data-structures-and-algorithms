@@ -29,3 +29,7 @@ To run your tests
 [Array Binary Search](../data-structures-and-algorithms/javascript/array-binary-search)
 
 [Array Sum](../data-structures-and-algorithms/javascript/array-sum)
+
+
+[stack and queue animal shelter ](../data-structures-and-algorithms/javascript/stack-queue-animal-shelter/README.md)
+
