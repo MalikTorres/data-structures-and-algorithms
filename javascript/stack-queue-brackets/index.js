@@ -19,3 +19,5 @@ function validateBrackets(string) {
 
   return stack.length === 0;
 }
+
+module.exports = validateBrackets;
