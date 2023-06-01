@@ -5,7 +5,7 @@ Stack and Queue Brackets
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 
-![Stack and Queue Brackets](stack-queue-brackets.png)
+![Stack and Queue Brackets](../assets/stack-queue-brackets.png)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 We broke each bracket into an array and then interated over the arrays with conditions. If those conditions were met we pushed those indexes into a new array.
