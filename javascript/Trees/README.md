@@ -3,7 +3,7 @@
 Binary Search Tree
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-
+![Trees](../assets/uml.png)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 The approach was to understand that the node has to be defined and from there you you have to traverse through the  tree
