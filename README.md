@@ -33,4 +33,8 @@ To run your tests
 
 [stack and queue animal shelter ](../data-structures-and-algorithms/javascript/stack-queue-animal-shelter/README.md)
 
+
 [BST](../data-structures-and-algorithms/javascript/Trees/README.md)
+
+[stack queue brackets](../data-structures-and-algorithms/javascript/stack-queue-brackets/README.md)
+
