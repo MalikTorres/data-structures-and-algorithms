@@ -93,3 +93,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 [Stack and Queues](../javascript/stack-and-queue/README.md)
 [](../javascript/README.md)
 [stack and queue animal shelter ](../javascript)
+[Trees](../javascript/stack-and-queue/README.md)
