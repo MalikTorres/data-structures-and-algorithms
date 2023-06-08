@@ -125,24 +125,57 @@ class BinarySearchTree extends BinaryTree {
       }
     }
   }
+  breadthFirst() {
+    if (this.root === null) {
+      return null;
+    }
+    const queue = [];
+    const results = [];
+    queue.push(this.root);
+    while (queue.length) {
+      let current = queue.shift();
+      results.push(current.value);
+      if (current.left) {
+        queue.push(current.left);
+      }
+      if (current.right) {
+        queue.push(current.right);
+      }
+    }
+    return results;
+  }
 }
-breadthFirst() {
-  if (this.root === null) {
-    return null;
-  }
-  const queue = [];
-  const results = [];
-  queue.push(this.root);
-  while (queue.length) {
-    let current = queue.shift();
-    results.push(current.value);
-    if (current.left) {
-      queue.push(current.left);
+class FizzBuzz extends BinaryTree {
+  fizzBuzz() {
+    if(!this.root) {
+      return null;
     }
-    if (current.right) {
-      queue.push(current.right);
-    }
+    const newTree = new BinarySearchTree();
+    const traverse = (node) => {
+      let value = '';
+
+      if(node.value % 3 === 0) {
+        value += 'Fizz';
+      }
+
+      if(node.value % 5 === 0) {
+        value += 'Buzz';
+      }
+      if(value === '' ) {
+        value = node.value.toString();
+      }
+      newTree.add(value);
+
+      if(node.left !== null) {
+        traverse(node.left);
+      }
+      if(node.right !== null) {
+        traverse(node.right);
+      }
+    };
+    traverse(this.root);
+    return newTree;
   }
-  return results;
 }
 
+module.exports = { BinaryTree, BinarySearchTree, FizzBuzz};
