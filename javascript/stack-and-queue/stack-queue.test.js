@@ -1,6 +1,6 @@
 'use strict';
 
-const { Stack } = require('./index');
+const { Stack, Queue } = require('./index');
 
 describe('Stack', () => {
   it('Can successfully push on to a stack', () => {
@@ -24,22 +24,11 @@ describe('Stack', () => {
   });
   it('Can successfully pop off a value in stack', () => {
     let stack = new Stack();
-    stack.pop(1);
+    stack.pop();
     expect(stack.top.value).toBeNull();
   });
-  it('Can successfully empty a stack after multiple pops', () => {
-    let stack = new Stack();
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
-    stack.pop(1);
-    stack.pop(2);
-    //expect(stack.top.value).toBeNull();
-    expect(stack.top.next.value).toBeNull();
-    expect(stack.top.next.value).toBeNull();
-  });
 
-  it('should successfully pop off the stack', () => {
+  it('should successfully pop a value off the stack', () => {
     let stack = new Stack();
     // Add some values to the stack
     stack.push(10);
@@ -57,7 +46,70 @@ describe('Stack', () => {
     expect(stack.peek()).toBe(20);
   });
 
+  it('Can successfully empty a stack after multiple pops', () => {
+    let stack = new Stack();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    stack.pop();
+    stack.pop();
+    expect(stack.isEmpty()).toBe(true);
+    expect(stack.peek()).toBeNull();
+    expect(stack.top).toBeNull();
+  });
+  it('should return the top value using peek()', () => {
+    let stack = new Stack();
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
+    expect(stack.peek()).toBe(30);
+    expect(stack.isEmpty()).toBe(false);
+  });
 });
+describe('Queue', () => {
+  it('Can successfully enqueue values into a queue', () => {
+    let queue = new Queue();
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    expect(queue.front.value).toEqual(1);
+    expect(queue.front.next.value).toEqual(2);
+    expect(queue.back.value).toEqual(3);
+  });
+
+  it('Can successfully dequeue a value from a queue', () => {
+    let queue = new Queue();
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    const removedValue = queue.dequeue();
+    expect(removedValue).toBe(1);
+    expect(queue.front.value).toBe(2);
+  });
+
+  it('Can successfully empty a queue after multiple dequeues', () => {
+    let queue = new Queue();
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    queue.dequeue();
+    queue.dequeue();
+    expect(queue.front).toEqual({ 'next': null, 'value': 3 });
+    expect(queue.isEmpty()).toBe(false);
+    queue.dequeue();
+    expect(queue.front).toBeNull();
+    expect(queue.isEmpty()).toBe(true);
+  });
+  it('should return the front value using peek()', () => {
+    let queue = new Queue();
+    queue.enqueue(10);
+    queue.enqueue(20);
+    queue.enqueue(30);
+    expect(queue.peek()).toBe(10);
+    expect(queue.isEmpty()).toBe(false);
+  });
+});
+
 
 // Can successfully push multiple values onto a stack
 // Can successfully pop off the stack
