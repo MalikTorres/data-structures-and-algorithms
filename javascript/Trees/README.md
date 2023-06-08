@@ -1,10 +1,11 @@
 # Challenge Title
 <!-- Description of the challenge -->
-Binary Search Tree
+Binary Search Tree, Tree Breadth, FizzBuzz
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
+![Tree FizzBuzz](../assets/fizzbuzz.png)
 ![Trees](../assets/uml.png)
-![Trees](../assets/breadth.png)
+![Tree Breadth First](../assets/breadth.png)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
@@ -15,6 +16,40 @@ The approach was to understand that the node has to be defined and from there yo
 <!-- Show how to run your code, and examples of it in action -->
 
 Code for some of the applied methods
+**Fizzbuzz**
+```
+class FizzBuzz extends BinaryTree {
+  fizzBuzz() {
+    if(!this.root) {
+      return null;
+    }
+    const newTree = new BinarySearchTree();
+    const traverse = (node) => {
+      let value = '';
+
+      if(node.value % 3 === 0) {
+        value += 'Fizz';
+      }
+
+      if(node.value % 5 === 0) {
+        value += 'Buzz';
+      }
+      if(value === '' ) {
+        value = node.value.toString();
+      }
+      newTree.add(value);
+
+      if(node.left !== null) {
+        traverse(node.left);
+      }
+      if(node.right !== null) {
+        traverse(node.right);
+      }
+    };
+    traverse(this.root);
+    return newTree;
+  }
+}
 
 **Breadth**
 
