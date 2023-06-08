@@ -38,4 +38,6 @@ To run your tests
 
 [stack queue brackets](../data-structures-and-algorithms/javascript/stack-queue-brackets/README.md)
 
-[Trees](../data-structures-and-algorithms/javascript/Trees/README.md)
+[Trees Implementations](../data-structures-and-algorithms/javascript/Trees/README.md)
+
+
