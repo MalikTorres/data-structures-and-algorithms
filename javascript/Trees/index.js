@@ -77,7 +77,6 @@ class BinaryTree {
     return currentMax;
   }
 
-
 }
 
 class BinarySearchTree extends BinaryTree {
@@ -127,26 +126,23 @@ class BinarySearchTree extends BinaryTree {
     }
   }
 }
+breadthFirst() {
+  if (this.root === null) {
+    return null;
+  }
+  const queue = [];
+  const results = [];
+  queue.push(this.root);
+  while (queue.length) {
+    let current = queue.shift();
+    results.push(current.value);
+    if (current.left) {
+      queue.push(current.left);
+    }
+    if (current.right) {
+      queue.push(current.right);
+    }
+  }
+  return results;
+}
 
-const binaryTree = new BinaryTree();
-binaryTree.root = new Node(1);
-binaryTree.root.left = new Node(2);
-binaryTree.root.right = new Node(3);
-binaryTree.root.left.left = new Node(4);
-binaryTree.root.left.right = new Node(5);
-
-console.log(binaryTree.preOrder());   // [1, 2, 4, 5, 3]
-console.log(binaryTree.inOrder());    // [4, 2, 5, 1, 3]
-console.log(binaryTree.postOrder());  // [4, 5, 2, 3, 1]
-
-const binarySearchTree = new BinarySearchTree();
-binarySearchTree.add(5);
-binarySearchTree.add(3);
-binarySearchTree.add(7);
-binarySearchTree.add(2);
-binarySearchTree.add(4);
-binarySearchTree.add(6);
-binarySearchTree.add(8);
-
-console.log(binarySearchTree.contains(4));  // true
-console.log(binarySearchTree.contains(9));  // false

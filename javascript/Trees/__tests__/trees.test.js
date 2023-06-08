@@ -1,4 +1,4 @@
-const { BinarySearchTree } = require('./index');
+const { BinarySearchTree } = require('../index');
 
 describe('BinarySearchTree', () => {
   let binarySearchTree;
@@ -86,5 +86,14 @@ describe('BinarySearchTree', () => {
     binarySearchTree.add(8);
 
     expect(binarySearchTree.contains(9)).toBe(false);
+
+
   });
+  it(`Can successfully traverse input tree using Breadth-first approach`, () => {
+    const bst = new BinarySearchTree();
+    bst.add(1);
+    bst.add(2);
+    bst.add(3);
+  });
+
 });
