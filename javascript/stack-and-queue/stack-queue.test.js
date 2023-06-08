@@ -1,6 +1,6 @@
 'use strict';
 
-const { Stack, Queue } = require('./index');
+const { Stack, Queue, AnimalShelter, Animal } = require('./index');
 
 describe('Stack', () => {
   it('Can successfully push on to a stack', () => {
@@ -110,7 +110,59 @@ describe('Queue', () => {
   });
 });
 
+describe('AnimalShelter', () => {
+  let animalShelter;
 
+  beforeEach(() => {
+    animalShelter = new AnimalShelter();
+  });
+
+  it('should enqueue dogs and cats separately', () => {
+    const dog1 = new Animal('dog', 'Dog1');
+    const dog2 = new Animal('dog', 'Dog2');
+    const cat1 = new Animal('cat', 'Cat1');
+    const cat2 = new Animal('cat', 'Cat2');
+
+    animalShelter.enqueue(dog1);
+    animalShelter.enqueue(cat1);
+    animalShelter.enqueue(dog2);
+    animalShelter.enqueue(cat2);
+
+    expect(animalShelter.dogQueue.dequeue()).toBe(dog1);
+    expect(animalShelter.dogQueue.dequeue()).toBe(dog2);
+    expect(animalShelter.catQueue.dequeue()).toBe(cat1);
+    expect(animalShelter.catQueue.dequeue()).toBe(cat2);
+  });
+
+  it('should dequeue dogs or cats based on preference', () => {
+    const dog1 = new Animal('dog', 'Dog1');
+    const dog2 = new Animal('dog', 'Dog2');
+    const cat1 = new Animal('cat', 'Cat1');
+    const cat2 = new Animal('cat', 'Cat2');
+
+    animalShelter.enqueue(dog1);
+    animalShelter.enqueue(cat1);
+    animalShelter.enqueue(dog2);
+    animalShelter.enqueue(cat2);
+
+    expect(animalShelter.dequeue('dog')).toBe(dog1);
+    expect(animalShelter.dequeue('cat')).toBe(cat1);
+    expect(animalShelter.dequeue('dog')).toBe(dog2);
+    expect(animalShelter.dequeue('cat')).toBe(cat2);
+  });
+
+  it('should return null if preference is neither dog nor cat', () => {
+    const dog = new Animal('dog', 'Dog');
+    const cat = new Animal('cat', 'Cat');
+
+    animalShelter.enqueue(dog);
+    animalShelter.enqueue(cat);
+
+    expect(animalShelter.dequeue('rabbit')).toBe(null);
+    expect(animalShelter.dequeue('')).toBe(null);
+    expect(animalShelter.dequeue(123)).toBe(null);
+  });
+});
 // Can successfully push multiple values onto a stack
 // Can successfully pop off the stack
 // Can successfully empty a stack after multiple pops

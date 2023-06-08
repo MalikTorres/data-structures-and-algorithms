@@ -90,4 +90,36 @@ class Queue {
     return this.front === null;
   }
 }
-module.exports = { Stack, Queue };
+
+class AnimalShelter {
+  constructor() {
+    this.dogQueue = new Queue();
+    this.catQueue = new Queue();
+  }
+
+  enqueue(animal) {
+    if (animal.species === 'dog') {
+      this.dogQueue.enqueue(animal);
+    } else if (animal.species === 'cat') {
+      this.catQueue.enqueue(animal);
+    }
+  }
+
+  dequeue(pref) {
+    if (pref === 'dog') {
+      return this.dogQueue.dequeue();
+    } else if (pref === 'cat') {
+      return this.catQueue.dequeue();
+    } else {
+      return null;
+    }
+  }
+}
+
+class Animal {
+  constructor(species, name) {
+    this.species = species;
+    this.name = name;
+  }
+}
+module.exports = { Stack, Queue, AnimalShelter, Animal};
