@@ -41,3 +41,4 @@ To run your tests
 [Trees Implementations](../data-structures-and-algorithms/javascript/Trees/README.md)
 
 
+[Insert Sort](../data-structures-and-algorithms/javascript/sorting/insertion/README.md)
