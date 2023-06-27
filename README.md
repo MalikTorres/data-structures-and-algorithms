@@ -44,3 +44,6 @@ To run your tests
 [Insert Sort](../data-structures-and-algorithms/javascript/sorting/insertion/README.md)
 
 [Sort](../data-structures-and-algorithms/javascript/sort/README.md)
+
+
+[Hashtable](../data-structures-and-algorithms/javascript/hashtable)
