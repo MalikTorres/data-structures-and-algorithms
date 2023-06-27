@@ -4,7 +4,7 @@
 const assert = require('assert');
 
 // Import the HashTable class
-const HashTable = require('..hastable/hashTable/');
+const HashTable = require('./hashTable/hashtable');
 
 // Create a new instance of HashTable
 const table = new HashTable(1024);
@@ -29,5 +29,33 @@ assert.strictEqual(table.has('Alice'), false); // Non-existent key
 const keys = table.keys();
 assert.deepStrictEqual(keys, ['Malik', 'John', 'Jane']);
 
+// Test the repeatedWord() function
+function repeatedWord(string) {
+  const wordCount = {};
+
+  const words = string.split(' ');
+
+  for (let word of words) {
+    word = word.toLowerCase();
+
+    if (wordCount[word]) {
+      return word;
+    } else {
+      wordCount[word] = 1;
+    }
+  }
+
+  // No repeated words found
+  return null;
+}
+
+// Test cases for repeatedWord()
+assert.strictEqual(repeatedWord('hello world hello'), 'hello');
+assert.strictEqual(repeatedWord('the quick brown fox jumps over the lazy dog'), null);
+assert.strictEqual(repeatedWord('a b c d e f g a b c'), 'a');
+assert.strictEqual(repeatedWord('apple banana cherry apple banana'), 'apple');
+assert.strictEqual(repeatedWord('repeated repeated repeated'), 'repeated');
+
 // Print a success message if all assertions pass
 console.log('All tests passed!');
+

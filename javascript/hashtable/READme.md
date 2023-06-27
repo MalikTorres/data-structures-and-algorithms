@@ -1,3 +1,6 @@
 [Code](/javascript/hashtable/hastable.js)
 
-Whiteboard not required for this file
+String implementation whiteboard
+
+
+![string](../assets/string.png)

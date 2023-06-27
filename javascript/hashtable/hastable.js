@@ -49,7 +49,28 @@ class HasTable {
     }, []);
     return results;
   }
+
+  repeatedWord(string) {
+    const wordCount = {};
+
+    const words = string.split(' ');
+
+    for (let word of words) {
+      word = word.toLowerCase();
+
+      if (wordCount[word]) {
+        return word;
+      } else {
+        wordCount[word] = 1;
+      }
+    }
+
+    // No repeated words found
+    return null;
+  }
 }
+
+
 
 
 
