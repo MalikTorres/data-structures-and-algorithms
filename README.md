@@ -47,3 +47,5 @@ To run your tests
 
 
 [Hashtable](../data-structures-and-algorithms/javascript/hashtable)
+
+[Tree Intersection](../data-structures-and-algorithms/javascript/treeInsection/README.md)
