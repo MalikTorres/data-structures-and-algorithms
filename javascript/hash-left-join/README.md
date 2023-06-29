@@ -7,6 +7,7 @@ hash left join
 
 ![Tree Intersection](../assets/join.png)
 ## Approach & Efficiency
+
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 The approach was to store the synonym and antonyms in separate objects and match them at the key
 
