@@ -51,3 +51,5 @@ To run your tests
 [Tree Intersection](../data-structures-and-algorithms/javascript/treeInsection/README.md)
 
 [Left join](../data-structures-and-algorithms/javascript/hash-left-join/README.md)
+
+[Do alone code challenge mock](../data-structures-and-algorithms/javascript/interview/README.md)
