@@ -53,3 +53,5 @@ To run your tests
 [Left join](../data-structures-and-algorithms/javascript/hash-left-join/README.md)
 
 [Do alone code challenge mock](../data-structures-and-algorithms/javascript/interview/README.md)
+
+[Reverse Linked List](../data-structures-and-algorithms/javascript/reverse/README.md)
