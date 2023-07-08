@@ -1,4 +1,4 @@
-const { Node, LinkedList } = require('./index');
+const { Node, LinkedList } = require('../reverse/index.js');
 
 describe('LinkedList', () => {
   test('reverse should reverse the linked list', () => {
