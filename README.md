@@ -55,3 +55,9 @@ To run your tests
 [Do alone code challenge mock](../data-structures-and-algorithms/javascript/interview/README.md)
 
 [Reverse Linked List](../data-structures-and-algorithms/javascript/reverse/README.md)
+
+
+[Practice](../data-structures-and-algorithms/javascript/practice/README.md)
+
+[Final](../data-structures-and-algorithms/javascript/final/README.md)
+
