@@ -1,5 +1,5 @@
 # 401 Final whiteboard
 
 
-
-![Final](../assets/401final.png)
+<!-- 
+![Final](../assets/401final.png) -->
